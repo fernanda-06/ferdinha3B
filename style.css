@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap'); /* Fonte moderna e versátil */
 
 :root {
-    --bg-color: #222831;
-    --primary-color: #DDDDDD;
-    --secondary-color: #F05454;
-    --font: "Nunito Sans", sans-serif;
+    --bg-color: #F4F4F4;          /* Fundo claro para transmitir tranquilidade */
+    --primary-color: #4A4A4A;      /* Cor escura para textos principais */
+    --secondary-color: #8BC34A;    /* Verde vibrante, remetendo à natureza */
+    --accent-color: #FF7043;       /* Laranja suave para destaques */
+    --font: "Nunito Sans", sans-serif; /* Fonte principal, limpa e legível */
+    --font-title: 'Montserrat', sans-serif; /* Fonte secundária para títulos */
 }
 
 body {
@@ -16,15 +19,18 @@ body {
 }
 
 header {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     text-align: center;
-    padding: 1px;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color); /* Linha separadora do cabeçalho */
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--bg-color);
     font-weight: 700;
+    font-family: var(--font-title); /* Fonte destacada para o título */
+    margin: 0;
 }
 
 nav {
@@ -36,18 +42,23 @@ nav {
 nav a {
     text-decoration: none;
     color: var(--bg-color);
-    margin: 0 2rem 1rem 0rem;
+    margin: 0 1.5rem;
     font-size: 1.2rem;
+    font-weight: 500;
+    transition: transform 0.3s, color 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
-    transform: scale(0.90);
-    transition: transform 0.1s;
+    color: var(--secondary-color); /* Verde no hover para remeter à natureza */
+    transform: scale(1.1);
+    transition: transform 0.2s, color 0.2s;
 }
 
 .graficos-container {
     margin: 5rem;
+    background-color: rgba(139, 195, 74, 0.1); /* Fundo verde translúcido */
+    border-radius: 10px;
+    padding: 2rem;
 }
 
 .grafico {
@@ -59,6 +70,9 @@ nav a:hover {
     text-align: center;
     padding: 2rem;
     border: var(--secondary-color) solid 2px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo claro semi-transparente */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras suaves */
 }
 
 span {
@@ -70,9 +84,16 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--bg-color);
     width: 100%;
     height: 3rem;
     margin-top: 2rem;
+    border-top: 2px solid var(--accent-color); /* Borda superior no rodapé */
+    font-size: 1rem;
+}
+
+footer p {
+    font-family: var(--font-title); /* Fonte moderna no rodapé */
+    font-weight: 500;
 }

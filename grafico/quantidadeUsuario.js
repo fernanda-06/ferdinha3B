@@ -13,47 +13,50 @@ async function quantidadeUsuariosPorRede() {
             y: quantidadeDeUsuarios, 
             type: 'bar',
             marker: {
-                color: getCSS('--primary-color')
+                color: getCSS('--secondary-color') // Usando o verde vibrante do tema relacionado à natureza
             }
         }
     ]
 
-    const laytout = {
-        plot_bgcolor: getCSS('--bg-color'),
-        paper_bgcolor: getCSS('--bg-color'),
+    const layout = { 
+        plot_bgcolor: getCSS('--bg-color'), // Fundo do gráfico, claro como no tema animal
+        paper_bgcolor: getCSS('--bg-color'), // Fundo do papel (do gráfico)
         title: {
-            text: 'Redes sociais com mais usuários',
+            text: 'Plataformas de Animais Mais Famosos nos Últimos 5 Anos',
             x: 0,
             font: {
-                color: getCSS('--primary-color'),
+                color: getCSS('--primary-color'), // Cor do título
                 size: 30,
-                font: getCSS('--font')
+                family: getCSS('--font') // Fonte do título
             }
         },
         xaxis: {
-            tickfont: tickConfig,
+            tickfont: tickConfig, // Configuração da fonte para os ticks no eixo X
             title: {
-                text: 'Nome das redes',
+                text: 'Espécies de Animais',
                 font: {
-                    color: getCSS('--secondary-color')
+                    color: getCSS('--secondary-color') // Cor do título do eixo X
                 }
             }
         },
         yaxis: {
-            tickfont: tickConfig,
+            tickfont: tickConfig, // Configuração da fonte para os ticks no eixo Y
             title: {
-                text: 'Bilhões de usuários ativos',
+                text: 'Popularidade (em milhões)',
                 font: {
-                    color: getCSS('--secondary-color')
+                    color: getCSS('--secondary-color') // Cor do título do eixo Y
                 }
             }
         }
     }
 
+    // Criando o div para o gráfico
     const grafico = document.createElement('div')
     grafico.className = 'grafico'
     document.getElementById('graficos-container').appendChild(grafico)
-    Plotly.newPlot(grafico, data, laytout)
+
+    // Gerando o gráfico com Plotly
+    Plotly.newPlot(grafico, data, layout)
 }
 
 quantidadeUsuariosPorRede()
